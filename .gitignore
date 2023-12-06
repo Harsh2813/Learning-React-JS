@@ -21,3 +21,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+All my quick revise points of React ---------------------------------------------------Please Ignore it
+
+1.If we update title just like JS title didn't update because React doesn't work like. We actually working with function as component which return JSX and for that we have to write under that JSX in JSX form and we are not calling function as JS we are calling it to another component by JSX and passing props so it didn't change title as wrong method for changing in react.
+
+2.UseState function return array dataType and its first index means the old or original value and second index means the updated value or we pass setState function to update the changes
+
+3.we use setTiltle() because in React we can't just just do things like javascript as function calls only one time here. component taking props.title and didn't run again after updating title that's why we used state and called setTitile() function that function should evaluate again and update this ttitle.
+
+4.setState is async function because it do not execut immediately, if we write many setState function then React will throw it to call back queue and parallely all setState will update then after re render all setState changes to update the values isiliye console.log previous value deta h bina setState me update wali because setState callback queue me hota h aur console.log sync work krta h, it updates changes parallely after render the component it re-renders again
+
+5.only corresponding title gets updated because useState runs only for specific component and we called expenseItem four times in expenses so everytime React will have its own state and changes accordingly.
+
+6.we are not re initializing the value by = operator so we can use const for destructring in useState.
+
+7.useState initialize the state when the component is first called or executed.
+
+8.when use setTitle ExpenseItem component re render again then merged updated chages with current state and then again setTitle gets updated for next call to a new value.
+
+9.when we want to call function again for changes in props or using eventHandlers or to take inputs. we should use normal variables only if we don't want to re render the component or don't want to show in screen.
