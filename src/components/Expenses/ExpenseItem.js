@@ -12,15 +12,17 @@ const ExpenseItem = (props) => {
         console.log(title);
     }
     return ( // we wrapped all contend inside Card custom component as passed all content inside it to Card as props using props.children and passed all classes as props.classes and added to Card class as string
-        <Card className='expense-item'>
-            <ExpenseDate date = {props.date}/>
-            <div className='expense-item__description'>
-                <h2>{title}</h2>  {/**here we use title directly not props.title because we passed title as props.title above in destructing for useState so we have to pass first value of title then as many times this component called React will change its state for this title rest work will react do */}
-                <h2>{props.LocationOfExpenditure}</h2>
-                <div className='expense-item__price'>${props.amount}</div>
-            </div>
-            <button onClick={clickHandler}>Change Expense</button>
-        </Card>
+        <li>
+            <Card className='expense-item'>
+                <ExpenseDate date = {props.date}/>
+                <div className='expense-item__description'>
+                    <h2>{title}</h2>  {/**here we use title directly not props.title because we passed title as props.title above in destructing for useState so we have to pass first value of title then as many times this component called React will change its state for this title rest work will react do */}
+                    <h2>{props.LocationOfExpenditure}</h2>
+                    <div className='expense-item__price'>${props.amount}</div>
+                </div>
+                <button onClick={clickHandler}>Change Expense</button>
+            </Card>
+        </li>
     )
 }
 
