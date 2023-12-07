@@ -4,7 +4,7 @@ import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
   const dropdownChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+    props.onChangeFilter(event.target.value); // jo bhi value select  hui use pass kr diye parent compo Expenses me
   };
 
   return (
