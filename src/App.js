@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 //import ExpenseItem from './components/ExpenseItem';
-import Expenses from './components/Expenses/Expenses';
-import NewExpenses from './components/Expenses/NewExpenses';
+import Expenses from "./components/Expenses/Expenses";
+import NewExpenses from "./components/Expenses/NewExpenses";
 
 const App = () => {
-  const expenses = [
+  const [expenses, setExpenes] = useState([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -26,11 +27,17 @@ const App = () => {
       date: new Date(2021, 5, 12),
       LocationOfExpenditure: "city",
     },
-  ];
+  ]);
 
+  const addExpenseHandler = (expense) => {
+    //taking expense as a parameter from child NewExpenses
+    setExpenes((prevExpenses) =>{
+      return [expense, ...prevExpenses];
+    });
+  };
   return (
     <div>
-      <NewExpenses/>
+      <NewExpenses onAddExpense={addExpenseHandler} />
       {/* <div>
        {expenses.map((obj) => (
         <ExpenseItem
@@ -42,7 +49,7 @@ const App = () => {
       ))}
       
       </div> */}
-      <Expenses items= {expenses}/>
+      <Expenses items={expenses} />
     </div>
   );
 
@@ -62,6 +69,6 @@ const App = () => {
     );
     But for this basic JS approach in React we have to use import React from 'React'; in every component as past
    */
-}
+};
 
 export default App;

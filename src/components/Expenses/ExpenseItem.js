@@ -6,7 +6,7 @@ import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
     const [title, setTitle] = useState(props.title);// we have to use or initialize useState under main component like here we did not outside of it nor inside any nested component
-    console.log("every time it initialize state this console will run")// useState doesn't means that it update changes for update changes after re render component we have to call setState fn which is setTitle here
+    //console.log("every time it initialize state this console will run")// useState doesn't means that it update changes for update changes after re render component we have to call setState fn which is setTitle here
     const clickHandler = () =>{
         setTitle('updated')//ye fn callback queue me gya jb tk niche wala console.log previous value print kiya
         console.log(title);
