@@ -31,7 +31,7 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    //taking expense as a parameter from child NewExpenses
+    //taking expense as a parameter from child NewExpenses and adding to array after submitting form NOTE- form already submitted with all details we just adding in array here for passing in expenses so that ExpenseItem can show as a list all input in screen
     setExpenses((prevExpenses) =>{
       console.log('trigerred', expense);
       return [expense, ...prevExpenses];

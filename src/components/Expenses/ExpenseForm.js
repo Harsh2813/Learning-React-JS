@@ -38,7 +38,7 @@ const ExpenseForm = (props) =>{ // we taken props here because here we are commu
         setEnteredDate(event.target.value);
     };
 
-    const SubmitHandler = (event) =>{
+    const SubmitHandler = (event) =>{ // as the form submit we maked object of input
         event.preventDefault();
         const expenseData = {
             title: enteredTitle,
@@ -68,6 +68,7 @@ const ExpenseForm = (props) =>{ // we taken props here because here we are commu
                 </div>
             </div>
             <div className='new-expense__actions'>
+                <button type= 'button' onClick={props.onCancel /**Added a cancel button as this button will click parent newExpense ka stopEditingHandler chalega aur set state false me hogi, see there */}>Cancel</button>
                 <button type='submit'>Add Expense</button>
             </div>
         </form>
